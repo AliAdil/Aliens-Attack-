@@ -70,6 +70,10 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
+            <StackPanel x:Name="human" Orientation="Vertical">
+                <Ellipse Height="10" Stroke="Red" Fill="White" Width="10"/>
+                <Rectangle Height="28" Stroke="Red" Fill="White" Width="10"/>
+            </StackPanel>
         </Canvas>
     </Grid>
 </Page>
