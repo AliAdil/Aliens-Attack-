@@ -74,6 +74,11 @@
                 <Ellipse Height="10" Stroke="Red" Fill="White" Width="10"/>
                 <Rectangle Height="28" Stroke="Red" Fill="White" Width="10"/>
             </StackPanel>
+            <TextBlock x:Name="gameOverText" TextWrapping="Wrap" FontFamily="Arial Black" FontSize="100" FontWeight="Bold" FontStyle="Italic" VerticalAlignment="Center" Canvas.Left="232" Canvas.Top="80" HorizontalAlignment="Center">
+            	<Run Text="Game Over"/>
+            	<LineBreak/>
+            	<Run/>
+            </TextBlock>
         </Canvas>
     </Grid>
 </Page>
