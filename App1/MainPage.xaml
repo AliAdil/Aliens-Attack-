@@ -52,10 +52,10 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="42,69,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button x:Name ="startButton" Content="Start!" Margin="0" Grid.Row="2" HorizontalAlignment="Center"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="14,19,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="0.422,0.385"/>
         <ProgressBar Grid.Column="1" HorizontalAlignment="Left" Height="10" Margin="190,94,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100"/>
         <ContentControl Content="ContentControl" Grid.Column="2" HorizontalAlignment="Left" Margin="89,72,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="510,210,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+        <Canvas Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="470,190,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Page>
