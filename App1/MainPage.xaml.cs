@@ -221,7 +221,8 @@ namespace App1
                 Point pointerPosition = e.GetCurrentPoint(null).Position;
                 Point relativePosition = grid.TransformToVisual(playArea).TransformPoint(pointerPosition);
                 if ((Math.Abs(relativePosition.X - Canvas.GetLeft(human)) > human.ActualWidth * 3)
-                    || ((Math.Abs(relativePosition.Y - Canvas.GetTop(human))> human.ActualHeight * 3)){
+                    || (Math.Abs(relativePosition.Y - Canvas.GetTop(human))> human.ActualHeight * 3))
+                {
                     humanCaptured = false;
                     human.IsHitTestVisible = true;
                 }
@@ -237,5 +238,7 @@ namespace App1
             if (humanCaptured)
                 EndTheGame();
         }
+
+   
     }
 }
