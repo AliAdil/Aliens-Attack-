@@ -28,6 +28,9 @@ namespace App1
         Random random = new Random();
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        DispatcherTimer enemyTimer = new DispatcherTimer();
+        DispatcherTimer targetTimer = new DispatcherTimer();
+        bool humanCaptured = false; 
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -50,9 +53,40 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
+
+            enemyTimer.Tick += enemyTimer_Tick;
+            enemyTimer.Interval = TimeSpan.FromSeconds(2);
+
+            targetTimer.Tick += targetTimer_Tick;
+            targetTimer.Interval = TimeSpan.FromSeconds(.1);
+
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+        }
+
+        void targetTimer_Tick(object sender, object e)
+        {
+            progressBar.Value += 1;
+            if (progressBar.Value >= progressBar.Maximum)
+                EndTheGame();
+        }
+
+        private void EndTheGame()
+        {
+            if (!playArea.Children.Contains(gameOverText))
+            {
+                enemyTimer.Stop();
+                targetTimer.Stop();
+                humanCaptured = false;
+                startButton.Visibility = Visibility.Visible;
+                playArea.Children.Add(gameOverText);
+            }
+        }
+
+        void enemyTimer_Tick(object sender, object e)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
